@@ -3,14 +3,31 @@
   <head>
     <title>DocSearth</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
+  <p>Find posts</p>
+          <form action="/search" method="get">
+            <div class="input-group input-inline search">
+              <input class="form-input" type="text" name="query" placeholder="search">
+               <button class="btn btn-primary input-group-btn">Search</button>
+                 </div>
+                </form>
   <body>
-    <%= yield %>
+    <%= render "layouts/navigation" %>
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
+
 </html>

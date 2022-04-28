@@ -3,7 +3,17 @@ class SubcategoriesController < ApplicationController
 
   # GET /subcategories or /subcategories.json
   def index
-    @subcategories = Subcategory.all
+    @categories = Category.all
+
+
+    cate = params[:category]
+
+   if !cate.nil?
+     @subcategories = Subcategory.where(:category_id => cate)
+   else
+     @subcategories = Subcategory.all
+   end
+
   end
 
   # GET /subcategories/1 or /subcategories/1.json
@@ -65,6 +75,6 @@ class SubcategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subcategory_params
-      params.require(:subcategory).permit(:title,:text)
+      params.require(:subcategory).permit(:title, :text, :category_id)
     end
 end

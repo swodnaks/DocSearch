@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">DocSearth</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-md-auto">
+          <%= link_to "Home", root_path, class: 'nav-link' %>
+          <li class="nav-item active">
+    <%= link_to "Create New Category", new_category_path, class: 'nav-link' %>
+    <%= link_to "Create New Subcategory", new_subcategory_path, class: 'nav-link' %>
+        <% if user_signed_in? %>
+        <li><%= current_user.first_name %></li>
+        <li><%= button_to 'Log out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Log In', new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </ul>
+  </div>
+</nav>

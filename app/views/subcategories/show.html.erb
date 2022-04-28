@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<div class="container-fluid mt-3">
+  <h1>Category: <%= @subcategory.category.title%></h1>
+<h3><%= @subcategory.title %></h3>
+<h3><%= @subcategory.text %></h3>
 
-<%= render @subcategory %>
 
-<div>
-  <%= link_to "Edit this subcategory", edit_subcategory_path(@subcategory) %> |
-  <%= link_to "Back to subcategories", subcategories_path %>
 
-  <%= button_to "Destroy this subcategory", @subcategory, method: :delete %>
+<%= link_to "Edit", edit_subcategory_path(@subcategory.id), class: 'btn btn-primary' %>
+<%= link_to "Delete", subcategory_path(@subcategory.id), method: :delete, class: 'btn btn-danger' %>
+<%= link_to "Back", subcategories_path, class: 'btn btn-secondary'%>
 </div>

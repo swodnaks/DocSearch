@@ -1,0 +1,10 @@
+<% if @results.any? %>
+  <h3>Search results (<%= @total_results %>):</h3>
+  <ol>
+  <% @results.each do |subcategory| %>
+    <li><%= subcategory.title %> (<%= subcategory.text %>)</li>
+  <% end %>
+  </ol>
+<% else %>
+  Results not found :(
+<% end %>

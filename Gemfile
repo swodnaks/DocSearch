@@ -19,7 +19,7 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem "turbo-rails", '~> 1.0.0'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -34,6 +34,14 @@ gem "redis", "~> 4.0"
 gem 'bootstrap-sass'
 
 gem 'devise'
+
+gem 'sass-rails'
+
+gem "elasticsearch-model"
+gem "elasticsearch-rails"
+
+gem 'search_flip'
+
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
