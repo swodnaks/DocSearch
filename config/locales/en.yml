@@ -30,4 +30,29 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  categories: Category
+  subcategories: Subcategories
+  create_category: Create category
+  create_subcategory: Create subcategory
+  back_to_categories: Bact to categories
+  back_to_subcategories: Bact to subcategories
+  edit: Edit
+  delete: Delete
+  back: Back
+  search: Searth
+  menu:
+    home: "Home"
+    new_category: "Create new category"
+    new_subcategory: "Create new subcategory"
+    log_out: Log Out
+
+  activerecord:
+    attributes:
+      category:
+        title: Title
+        text: Content
+  activerecord:
+    attributes:
+      subcategory:
+        title: Title
+        text: Content

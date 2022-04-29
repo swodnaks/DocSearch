@@ -3,8 +3,13 @@
   <ol>
   <% @results.each do |subcategory| %>
     <li><%= subcategory.title %> (<%= subcategory.text %>)</li>
+
+    Category:
+    <%= link_to subcategory.category.title, category_path(subcategory.category.id) %>
   <% end %>
   </ol>
 <% else %>
   Results not found :(
 <% end %>
+
+<%= paginate @query %>

@@ -1,7 +1,14 @@
 <div class="container-fluid mt-3">
-  <h1>Category: <%= @subcategory.category.title%></h1>
-<h3><%= @subcategory.title %></h3>
-<h3><%= @subcategory.text %></h3>
+  <h1>Category: <%= link_to @subcategory.category.title, category_path(@subcategory.category.id)%></h1>
+  <p>
+    <strong>Title:</strong>
+    <%= @subcategory.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= markdown(@subcategory.text) %>
+  </p>
 
 
 

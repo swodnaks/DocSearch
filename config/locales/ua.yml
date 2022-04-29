@@ -1,0 +1,26 @@
+ua:
+  categories: Категорія
+  subcategories: Підкатегорії
+  create_category: Створити категорію
+  create_subcategory: Створити підкатегорію
+  back_to_categories: Повернутися до категорій
+  back_to_subcategories: Повернутися до підкатегорій
+  edit: Редагувати
+  delete: Видалити
+  back: Назад
+  search: Пошук
+  menu:
+    home: "На головну"
+    new_category: "Створити нову категорію"
+    new_subcategory: Створити нову підкатегорію
+    log_out: Вийти
+  activerecord:
+    attributes:
+      category:
+        title: Заголовок
+        text: Контент
+  activerecord:
+    attributes:
+      subcategory:
+        title: Заголовок
+        text: Контент

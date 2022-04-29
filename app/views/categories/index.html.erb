@@ -1,8 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 align="center"> DocSearth</h1>
 
-<h1>Categories:</h1>
+<h1><% I18n.t('categories') %></h1>
 
 <div id="categories">
   <% @categories.each do |category| %>
@@ -11,5 +10,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New category", new_category_path %>

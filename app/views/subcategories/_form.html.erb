@@ -8,8 +8,8 @@
 
 
     <div class="form-group">
-    <%= f.label :title%>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= markdown f.label :title%>
+    <%= markdown f.text_field :title, class: 'form-control' %>
 
     </div>
 
@@ -24,6 +24,6 @@
   <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %>
 
   <div>
-    <%= f.submit %>
+    <%= f.submit I18n.t('create_subcategory') %>
   </div>
 <% end %>

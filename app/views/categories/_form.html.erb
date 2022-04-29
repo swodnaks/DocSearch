@@ -8,8 +8,8 @@
 
 
     <div class="form-group">
-    <%= f.label :title%>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= markdown f.label :title%>
+    <%= markdown f.text_field :title, class: 'form-control' %>
 
     </div>
 
@@ -20,7 +20,7 @@
     <%= f.text_area :text, class: 'form-control'%>
 
     </div>
-    
-    <%= f.submit %>
+
+    <%= f.submit I18n.t('create_category') %>
   </div>
 <% end %>

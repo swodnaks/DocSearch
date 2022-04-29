@@ -10,13 +10,16 @@
       <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <p>Find posts</p>
           <form action="/search" method="get">
             <div class="input-group input-inline search">
-              <input class="form-input" type="text" name="query" placeholder="search">
-               <button class="btn btn-primary input-group-btn">Search</button>
+              <input class="form-input" type="text" name="query" placeholder=<%=I18n.t('search')%>>
+               <button class="btn btn-primary input-group-btn"><%=I18n.t('search')%></button>
                  </div>
                 </form>
+
+
+
+
   <body>
     <%= render "layouts/navigation" %>
     <div id="flash">
@@ -24,6 +27,8 @@
         <div class="flash <%= key %>"><%= value %></div>
       <% end %>
     </div>
+
+
 
     <div class="container-fluid">
       <%= yield %>

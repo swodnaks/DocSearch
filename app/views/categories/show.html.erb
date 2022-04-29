@@ -1,20 +1,25 @@
 <div class="container-fluid mt-3">
-  <h1>Category: <%= @category.title%></h1>
-<h3><%= @category.title %></h3>
-<h3><%= @category.text %></h3>
+  <h1> <%=I18n.t('categories')%>:<%= @category.title%></h1>
+  <p>
+
+  <p>
+    <strong></strong>
+    <%= markdown(@category.text) %>
+  </p>
 
 
 
 
-<%= link_to "Edit", edit_category_path(@category.id), class: 'btn btn-primary' %>
-<%= link_to "Delete", category_path(@category.id), method: :delete, class: 'btn btn-danger' %>
-<%= link_to "Back", categories_path, class: 'btn btn-secondary'%>
+
+<%= link_to I18n.t('edit'), edit_category_path(@category.id), class: 'btn btn-primary' %>
+<%= link_to I18n.t('delete'), category_path(@category.id), method: :delete, class: 'btn btn-danger' %>
+<%= link_to I18n.t('back'), categories_path, class: 'btn btn-secondary'%>
 </div>
 
-
-Subcategories:
+<h3><%=I18n.t('subcategories')%>: </h3>
+<div class="container-fluid mt-4">
   <% @category.subcategories.each do |subcategory| %>
-    <%= link_to subcategory.title, subcategory_path(subcategory.id) %>
+    <h4> <%= link_to subcategory.title, subcategory_path(subcategory.id) %> </h4>
     <p>
     </p>
   <% end %>
