@@ -12,7 +12,22 @@
 
 
 
-<%= link_to "Edit", edit_subcategory_path(@subcategory.id), class: 'btn btn-primary' %>
-<%= link_to "Delete", subcategory_path(@subcategory.id), method: :delete, class: 'btn btn-danger' %>
-<%= link_to "Back", subcategories_path, class: 'btn btn-secondary'%>
+<%= link_to I18n.t('edit'), edit_subcategory_path(@subcategory.id), class: 'btn btn-primary' if moderator? || admin? %>
+<%= button_to I18n.t('delete'), subcategory_path(@subcategory.id), method: :delete, class: 'btn btn-danger' if admin? %>
+<%= link_to I18n.t('back'), category_path(@subcategory.category.id), class: 'btn btn-secondary'%>
 </div>
+
+
+<% @subcategory.articles.each do |article| %>
+   <div class="col-md-6">
+       <div class="card mt-3">
+           <div class="card-body">
+             <h3><%= link_to article.title, article_path(article.id) %></h3>
+           </div>
+       </div>
+    </div>
+<% end %>
+
+
+
+<div class="col-md-4">

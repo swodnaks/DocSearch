@@ -1,5 +1,7 @@
 ua:
   categories: Категорія
+  new_category: Нова категорія
+  new_subcategory: Нова підкатегорія
   subcategories: Підкатегорії
   create_category: Створити категорію
   create_subcategory: Створити підкатегорію
@@ -9,16 +11,12 @@ ua:
   delete: Видалити
   back: Назад
   search: Пошук
+  view: Проглянути
   menu:
     home: "На головну"
     new_category: "Створити нову категорію"
     new_subcategory: Створити нову підкатегорію
     log_out: Вийти
-  activerecord:
-    attributes:
-      category:
-        title: Заголовок
-        text: Контент
   activerecord:
     attributes:
       subcategory:

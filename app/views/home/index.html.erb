@@ -1,17 +1,1 @@
 
-
-<p style="color: green"><%= notice %></p>
-
-<h1 align="center"> DocSearth</h1>
-
-<h1>Categories:</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-  <h3>  <%= link_to category.title, category_path(category.id) %> </h3>
-    <p>
-    </p>
-  <% end %>
-</div>
-
-<h7> <%= link_to "New category", new_category_path %> </h7>

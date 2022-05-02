@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
   resources :articles
+  resources :users, :only => [:index, :edit, :update]
   resources :subcategories
-  get 'search', to: 'search#search'
   resources :categories
   devise_for :users
 root to: 'categories#index'
+get 'search', to: 'search#search'
 
 #get “search”, to: “search#search”
 

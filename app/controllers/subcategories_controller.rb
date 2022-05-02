@@ -32,6 +32,7 @@ class SubcategoriesController < ApplicationController
 
   # POST /subcategories or /subcategories.json
   def create
+    authorize Subcategory
     @subcategory = Subcategory.new(subcategory_params)
 
     respond_to do |format|
@@ -47,6 +48,7 @@ class SubcategoriesController < ApplicationController
 
   # PATCH/PUT /subcategories/1 or /subcategories/1.json
   def update
+    authorize Subcategory
     respond_to do |format|
       if @subcategory.update(subcategory_params)
         format.html { redirect_to subcategory_url(@subcategory), notice: "Subcategory was successfully updated." }
@@ -60,6 +62,7 @@ class SubcategoriesController < ApplicationController
 
   # DELETE /subcategories/1 or /subcategories/1.json
   def destroy
+    authorize Subcategory
     @subcategory.destroy
 
     respond_to do |format|

@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
-  belongs_to :user
+  include SearchFlip::Model
+  belongs_to :subcategory
   validates :title, presence: true, length: {minimum: 3}
   validates :body, presence: true
 end

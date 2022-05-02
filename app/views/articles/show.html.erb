@@ -3,8 +3,7 @@
 <%= render @article %>
 
 <div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
-
-  <%= button_to "Destroy this article", @article, method: :delete %>
+  <%= link_to I18n.t('edit'), edit_article_path(@article) if moderator? || admin? %>  |
+  <%= link_to I18n.t('back'), articles_path %>
+  <%= button_to I18n.t('destroy'), @article, method: :delete  if admin?%>
 </div>

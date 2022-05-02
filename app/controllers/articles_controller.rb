@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
+    authorize Article
     @articles = Article.all
   end
 
@@ -21,7 +22,8 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    @article = current_user.articles.build(article_params)
+    authorize Article
+    @article = Article.new(article_params)
 
     respond_to do |format|
       if @article.save
@@ -36,6 +38,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
+    authorize Article
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to article_url(@article), notice: "Article was successfully updated." }
@@ -49,6 +52,7 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
+    authorize Article
     @article.destroy
 
     respond_to do |format|
@@ -65,6 +69,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :body, :user_id)
+      params.require(:article).permit(:title, :body, :subcategory_id)
     end
 end

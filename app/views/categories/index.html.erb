@@ -3,10 +3,29 @@
 
 <h1><% I18n.t('categories') %></h1>
 
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= link_to category.title, category_path(category.id) %>
-    <p>
-    </p>
-  <% end %>
+<div class="container">
+    <div class="row">
+
+
+    <div class="col-md-8">
+
+    <div class="row">
+
+
+     <% @categories.each do |category| %>
+        <div class="col-md-6">
+            <div class="card mt-3">
+                <div class="card-body">
+                                    <h3><%= link_to category.title, category_path(category.id) %></h3>
+
+                    <%= link_to I18n.t('view'), category_path(category.id), class: 'btn btn-primary'%>
+                </div>
+            </div>
+         </div>
+    <% end %>
+ </div>
 </div>
+
+
+
+    <div class="col-md-4">

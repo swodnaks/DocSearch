@@ -1,5 +1,5 @@
 <div class="container-fluid mt-3">
-  <h1> <%=I18n.t('categories')%>:<%= @category.title%></h1>
+  <h1><%= @category.title%></h1>
   <p>
 
   <p>
@@ -11,16 +11,31 @@
 
 
 
-<%= link_to I18n.t('edit'), edit_category_path(@category.id), class: 'btn btn-primary' %>
-<%= link_to I18n.t('delete'), category_path(@category.id), method: :delete, class: 'btn btn-danger' %>
+<%= link_to I18n.t('edit'), edit_category_path(@category.id), class: 'btn btn-primary'if moderator? || admin? %>
+<%= button_to I18n.t('delete'), category_path(@category.id), method: :delete, class: 'btn btn-danger' if admin? %>
 <%= link_to I18n.t('back'), categories_path, class: 'btn btn-secondary'%>
 </div>
 
 <h3><%=I18n.t('subcategories')%>: </h3>
-<div class="container-fluid mt-4">
-  <% @category.subcategories.each do |subcategory| %>
-    <h4> <%= link_to subcategory.title, subcategory_path(subcategory.id) %> </h4>
-    <p>
-    </p>
-  <% end %>
+<div class="col-md-8">
+
+<div class="row">
+
+
+ <% @category.subcategories.each do |subcategory| %>
+    <div class="col-md-6">
+        <div class="card mt-3">
+            <div class="card-body">
+                                <h3><%= link_to subcategory.title, subcategory_path(subcategory.id) %></h3>
+
+                <%= link_to link_to I18n.t('view'), subcategory_path(subcategory.id), class: 'btn btn-primary'%>
+            </div>
+        </div>
+      </div>
+   <% end %>
+  </div>
 </div>
+
+
+
+<div class="col-md-4">

@@ -21,7 +21,8 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    @category = Category.new(category_params)
+    authorize Category
+    @category = current_user.categories.new(category_params)
 
     respond_to do |format|
       if @category.save
@@ -36,6 +37,7 @@ class CategoriesController < ApplicationController
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
+    authorize Category
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to category_url(@category), notice: "Category was successfully updated." }
@@ -49,6 +51,7 @@ class CategoriesController < ApplicationController
 
   # DELETE /categories/1 or /categories/1.json
   def destroy
+    authorize Category
     @category.destroy
 
     respond_to do |format|
@@ -65,6 +68,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:title, :text)
+      params.require(:category).permit(:title, :text, :user_id)
     end
 end

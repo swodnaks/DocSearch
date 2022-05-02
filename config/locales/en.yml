@@ -31,6 +31,8 @@
 
 en:
   categories: Category
+  new_category: New category
+  new_subcategory: New subcategory
   subcategories: Subcategories
   create_category: Create category
   create_subcategory: Create subcategory
@@ -40,17 +42,12 @@ en:
   delete: Delete
   back: Back
   search: Searth
+  view: View
   menu:
     home: "Home"
     new_category: "Create new category"
     new_subcategory: "Create new subcategory"
     log_out: Log Out
-
-  activerecord:
-    attributes:
-      category:
-        title: Title
-        text: Content
   activerecord:
     attributes:
       subcategory:
