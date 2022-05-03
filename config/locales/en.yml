@@ -34,6 +34,7 @@ en:
   new_category: New category
   new_subcategory: New subcategory
   new_article: New article
+  all_users: All users
   subcategories: Subcategories
   create_category: Create category
   create_subcategory: Create subcategory
@@ -46,6 +47,8 @@ en:
   view: View
   registration_date: Registered at
   back: Back
+  sign_up: Sign Up
+  sign_in: Sign In
   menu:
     home: "Home"
     new_category: "Create new category"
