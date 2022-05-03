@@ -2,6 +2,8 @@ ua:
   categories: Категорія
   new_category: Нова категорія
   new_subcategory: Нова підкатегорія
+  new_article: Новий пост
+  all_users: Усі користувачі
   subcategories: Підкатегорії
   create_category: Створити категорію
   create_subcategory: Створити підкатегорію
@@ -12,6 +14,8 @@ ua:
   back: Назад
   search: Пошук
   view: Проглянути
+  registration_date: Дата реєстрації
+  back: Повернутися
   menu:
     home: "На головну"
     new_category: "Створити нову категорію"

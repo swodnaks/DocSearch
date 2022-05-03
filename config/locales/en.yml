@@ -33,6 +33,7 @@ en:
   categories: Category
   new_category: New category
   new_subcategory: New subcategory
+  new_article: New article
   subcategories: Subcategories
   create_category: Create category
   create_subcategory: Create subcategory
@@ -43,6 +44,8 @@ en:
   back: Back
   search: Searth
   view: View
+  registration_date: Registered at
+  back: Back
   menu:
     home: "Home"
     new_category: "Create new category"

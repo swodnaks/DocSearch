@@ -20,6 +20,6 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def destroy?
-  @current_user.admin?
+    @current_user.admin?
   end
 end

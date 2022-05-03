@@ -24,6 +24,6 @@
   <%= f.select :subcategory_id, Subcategory.all.map {|c| [c.title, c.id]} %>
 
   <div>
-    <%= f.submit  %>
+    <%= f.submit I18n.t('new_article')  %>
   </div>
 <% end %>

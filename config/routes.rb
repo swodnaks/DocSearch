@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, :only => [:index, :edit, :update]
   resources :subcategories
   resources :categories
+  get 'edit', to: 'edit#edit'
   devise_for :users
 root to: 'categories#index'
 get 'search', to: 'search#search'

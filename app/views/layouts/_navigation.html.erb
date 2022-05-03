@@ -22,10 +22,9 @@
           <li class="nav-item active">
     <%= link_to I18n.t('menu.new_category'), new_category_path, class: 'nav-link'if admin? %>
     <%= link_to I18n.t('menu.new_subcategory'), new_subcategory_path, class: 'nav-link' if admin? %>
-    <%= link_to "New article", new_article_path, class: 'nav-link' if admin? %>
-    <%= link_to "All Users", users_path, class: 'nav-link' if admin? %>
+    <%= link_to I18n.t('new_article'), new_article_path, class: 'nav-link' if admin? %>
+    <%= link_to I18n.t('all_users'), users_path, class: 'nav-link' if admin? %>
         <% if user_signed_in? %>
-        <li><%= current_user.email %></li>
         <li><%= button_to I18n.t('menu.log_out'), destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'Log In', new_user_session_path %></li>

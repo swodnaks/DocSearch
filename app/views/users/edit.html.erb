@@ -13,7 +13,7 @@
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
-
+      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 

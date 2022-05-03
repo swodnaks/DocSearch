@@ -1,9 +1,9 @@
-<h1>New article</h1>
+<h1> <%= I18n.t('new_article') %></h1>
 
 <%= render "form", article: @article %>
 
 <br>
 
 <div>
-  <%= link_to "Back to articles", articles_path %>
+  <%= link_to I18n.t('back'), articles_path %>
 </div>

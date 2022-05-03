@@ -1,5 +1,9 @@
+<h1> <%= I18n.t('all_users') %>: </h1>
+
 <% @users.each do |user| %>
     <li>
         <%= link_to user.email, edit_user_path(user.id) %>
+        <%= user.role %>
+        <h6> <%= I18n.t('registration_date') %>: <%= user.created_at.strftime('%B %d, %Y') %> </h6>
     </li>
 <% end %>
