@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   devise_for :users
 root to: 'categories#index'
 get 'search', to: 'search#search'
+get 'users_search', to: 'users#search'
 
 #get “search”, to: “search#search”
 

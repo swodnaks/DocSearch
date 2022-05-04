@@ -1,0 +1,14 @@
+<% if @results.any? %>
+  <h3>Search results (<%= @total_results %>):</h3>
+  <ol>
+  <% @results.each do |user| %>
+    <li><%= link_to user.email, edit_user_path(user.id) %> (<%= user.email %>)</li>
+    (<%= user.role %>)
+  <% end %>
+  </ol>
+<% else %>
+  Results not found :(
+<% end %>
+
+
+<%= paginate @query %>

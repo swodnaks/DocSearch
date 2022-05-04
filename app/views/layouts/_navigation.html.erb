@@ -19,10 +19,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-md-auto">
           <%= link_to I18n.t('menu.home'), root_path, class: 'nav-link' %>
+          <%= link_to 'Articles', articles_path, class: 'nav-link' %>
           <li class="nav-item active">
+          <%= link_to 'Subcategories', subcategories_path, class: 'nav-link' %>
+          <li class="nav-item active">
+          <%= link_to 'Categories', categories_path, class: 'nav-link' %>
+
     <%= link_to I18n.t('menu.new_category'), new_category_path, class: 'nav-link'if admin? %>
+    <li class="nav-item active">
     <%= link_to I18n.t('menu.new_subcategory'), new_subcategory_path, class: 'nav-link' if admin? %>
+    <li class="nav-item active">
     <%= link_to I18n.t('new_article'), new_article_path, class: 'nav-link' if admin? %>
+    <li class="nav-item active">
     <%= link_to I18n.t('all_users'), users_path, class: 'nav-link' if admin? %>
         <% if user_signed_in? %>
         <li><%= button_to I18n.t('menu.log_out'), destroy_user_session_path, method: :delete %></li>

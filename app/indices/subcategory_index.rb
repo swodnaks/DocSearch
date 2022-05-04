@@ -13,7 +13,7 @@ class SubcategoryIndex
     {
       id: subcategory.id,
       title: subcategory.title,
-      text: subcategory.text,
+      text: subcategory.text
      }
   end
 end

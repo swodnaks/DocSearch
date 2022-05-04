@@ -1,4 +1,11 @@
-<h1> <%= I18n.t('all_users') %>: </h1>
+<h1> Results: </h1>
+
+<form action="/users_search" method="get">
+  <div class="input-group input-inline search">
+    <input class="form-input" type="text" name="query" placeholder=<%=I18n.t('search')%>>
+     <button class="btn btn-primary input-group-btn"><%=I18n.t('search')%></button>
+       </div>
+      </form>
 
 <% @users.each do |user| %>
     <li>

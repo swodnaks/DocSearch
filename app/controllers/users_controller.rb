@@ -27,6 +27,14 @@ end
     end
   end
 
+  def search
+    @query = UserIndex.search(params[:query].to_s).page(params[:page]).per(50)
+
+    @query = @query.page(params[:page]).per(50)
+
+    @results = @query.records
+    @total_results = @query.total_entries
+  end
 
    private
 
