@@ -28,6 +28,12 @@ ua:
       subcategory:
         title: Заголовок
         text: Контент
+      category:
+        title: Заголовок
+        text: Контент
+      article:
+        title: Заголовок
+        body: Контент  
 
   devise:
     confirmations:

@@ -5,8 +5,6 @@ class SubcategoriesController < ApplicationController
   # GET /subcategories or /subcategories.json
   def index
     @categories = Category.all
-
-
     cate = params[:category]
 
    if !cate.nil?
@@ -14,7 +12,6 @@ class SubcategoriesController < ApplicationController
    else
      @subcategories = Subcategory.all
    end
-
   end
 
   # GET /subcategories/1 or /subcategories/1.json

@@ -5,5 +5,5 @@
 <div>
   <%= link_to I18n.t('edit'), edit_article_path(@article) if moderator? || admin? %>  |
   <%= link_to I18n.t('back'), articles_path %>
-  <%= button_to I18n.t('destroy'), @article, method: :delete  if admin?%>
+  <%= button_to I18n.t('delete'), @article, method: :delete  if admin?%>
 </div>

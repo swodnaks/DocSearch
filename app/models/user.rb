@@ -7,15 +7,21 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
 
-
+  has_one  :profile
   has_many :categories
   has_many :subcategories, :through => :categories
+
+  after_create :make_profile
 
   enum role: [:user, :moderator, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
     self.role ||= :user
+  end
+
+  def make_profile
+   self.create_profile
   end
 
 end

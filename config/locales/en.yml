@@ -59,3 +59,9 @@ en:
       subcategory:
         title: Title
         text: Content
+      category:
+        title: Title
+        text: Content
+      article:
+        title: Title
+        body: Content

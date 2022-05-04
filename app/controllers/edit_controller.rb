@@ -1,2 +1,0 @@
-class EditController < ApplicationController
- end
