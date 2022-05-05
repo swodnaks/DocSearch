@@ -1,12 +1,12 @@
 <div class="container-fluid mt-3">
-  <h1>Category: <%= link_to @subcategory.category.title, category_path(@subcategory.category.id)%></h1>
+  <h1><%= I18n.t('categories') %>: <%= link_to @subcategory.category.title, category_path(@subcategory.category.id)%></h1>
   <p>
-    <strong>Title:</strong>
+    <strong><%= I18n.t('title') %>:</strong>
     <%= @subcategory.title %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong><%= I18n.t('body') %>:</strong>
     <%= markdown(@subcategory.text) %>
   </p>
 

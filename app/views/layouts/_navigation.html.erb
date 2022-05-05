@@ -1,50 +1,64 @@
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-    </div>
-
-
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">DocSearch</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
 
 
 
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">DocSearch</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-md-auto">
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
           <%= link_to I18n.t('menu.home'), root_path, class: 'nav-link' %>
-          <%= link_to 'Articles', articles_path, class: 'nav-link' %>
-          <li class="nav-item active">
-          <%= link_to 'Subcategories', subcategories_path, class: 'nav-link' %>
-          <li class="nav-item active">
-          <%= link_to 'Categories', categories_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+          <%= link_to I18n.t('menu.new_category'), new_category_path, class: 'nav-link'if admin? %>
+      </li>
+      <li class="nav-item">
+        <%= link_to I18n.t('menu.new_subcategory'), new_subcategory_path, class: 'nav-link' if admin? %>
+      </li>
+      <li class="nav-item">
+          <%= link_to I18n.t('new_article'), new_article_path, class: 'nav-link' if admin? %>
+      </li>
+      <li class="nav-item">
+        <%= link_to I18n.t('all_articles'), articles_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+            <%= link_to I18n.t('all_subcategories'), subcategories_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+          <%= link_to I18n.t('all_categories'), categories_path, class: 'nav-link' %>
+      </li>
+    </li>
+    <li class="nav-item">
+        <%= link_to I18n.t('all_users'), users_path, class: 'nav-link' if admin? %>
+    </li>
+  <li class="nav-item">
 
-    <%= link_to I18n.t('menu.new_category'), new_category_path, class: 'nav-link'if admin? %>
-    <li class="nav-item active">
-    <%= link_to I18n.t('menu.new_subcategory'), new_subcategory_path, class: 'nav-link' if admin? %>
-    <li class="nav-item active">
-    <%= link_to I18n.t('new_article'), new_article_path, class: 'nav-link' if admin? %>
-    <li class="nav-item active">
-    <%= link_to I18n.t('all_users'), users_path, class: 'nav-link' if admin? %>
+      <form action="/articles_search" method="get">
+        <%= hidden_field_tag "locale", params[:locale]%>
+        <div class="input-group input-inline search">
+          <input class="form-input" type="text" name="query" placeholder=<%=I18n.t('search')%>>
+           <button class="btn btn-primary input-group-btn mb1 black mb1 bg-black"><%=I18n.t('search')%></button>
+             </div>
+            </form>
+      </li>
+       <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
         <% if user_signed_in? %>
         <li><%= button_to I18n.t('menu.log_out'), destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to I18n.t('sign_in'), new_user_session_path %></li>/
-          <li><%= link_to I18n.t('sign_up'), new_user_registration_path %></li>
+          <li><%= link_to I18n.t('sign_in'), new_user_session_path, {:style=>'color:#FFFFFF;', :class => "css_class"} %></li>/
+          <li><%= link_to I18n.t('sign_up'), new_user_registration_path, {:style=>'color:#FFFFFF;', :class => "css_class"} %></li>
         <% end %>
-      </ul>
-    </ul>
+
   </div>
 </nav>
+
 
 <ul>
 <li><%= link_to 'English', root_path(locale: :en) %></li>
 <li><%= link_to 'Українська', root_path(locale: :ua) %></li>
 </ul>
-</nav>

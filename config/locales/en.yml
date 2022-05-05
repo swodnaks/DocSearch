@@ -31,6 +31,7 @@
 
 en:
   categories: Category
+  subcategory: Subcategory
   new_category: New category
   new_subcategory: New subcategory
   new_article: New article
@@ -49,6 +50,15 @@ en:
   back: Back
   sign_up: Sign Up
   sign_in: Sign In
+  all_categories: Categories
+  all_articles: Articles
+  all_subcategories: Subcategories
+  title: Title
+  body: Content
+  results: Results
+  find_subcategories: Find subcategory
+  find_article: Find article
+
   menu:
     home: "Home"
     new_category: "Create new category"

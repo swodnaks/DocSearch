@@ -5,6 +5,14 @@
     <div class="col-md-8">
 
     <div class="row">
+      <h6><%= I18n.t('find_article') %>:</h6>
+      <form action="/articles_search" method="get">
+        <%= hidden_field_tag "locale", params[:locale]%>
+        <div class="input-group input-inline search">
+          <input class="form-input" type="text" name="query" placeholder=<%=I18n.t('search')%>>
+           <button class="btn btn-primary input-group-btn "><%=I18n.t('search')%></button>
+             </div>
+            </form>
 
 
      <% @articles.each do |article| %>
@@ -13,10 +21,29 @@
                 <div class="card-body">
                   <h3><%= link_to article.title, article_path(article.id) %></h3>
 
-                    <%= link_to "View", article_path(article.id), class: 'btn btn-primary'%>
+                    <%= link_to I18n.t('view'), article_path(article.id), class: 'btn btn-primary'%>
                 </div>
             </div>
          </div>
       <% end %>
   </div>
 </div>
+
+<div class="col-md-4">
+  <div class="card mt-3">
+    <div class="card-header">
+        <%= I18n.t('all_subcategories') %>
+      </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <% @subcategories.each do |subcategory| %>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                 <%= link_to subcategory.title, subcategories_path(:subcategory => subcategory.id)%>
+                 </li>
+                  <% end %>
+                    </ul>
+                   </div>
+                 </div>
+                 </div>
+               </div>
+              </div>

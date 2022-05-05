@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 root to: 'categories#index'
 get 'search', to: 'search#search'
 get 'users_search', to: 'users#search'
+get 'articles_search', to: 'articles#search'
 
 #get “search”, to: “search#search”
 

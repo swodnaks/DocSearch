@@ -1,9 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<div class="container-fluid mt-3">
+  <h3><%= I18n.t('subcategory') %>: <%= link_to @article.subcategory.title, subcategory_path(@article.subcategory.id)%></h3>
+  <p>
+    <strong><%= I18n.t('title') %>:</strong>
+    <%= @article.title %>
+  </p>
 
-<%= render @article %>
+  <p>
+    <strong><%= I18n.t('body') %>:</strong>
+    <%= markdown(@article.body) %>
+  </p>
 
-<div>
-  <%= link_to I18n.t('edit'), edit_article_path(@article) if moderator? || admin? %>  |
-  <%= link_to I18n.t('back'), articles_path %>
-  <%= button_to I18n.t('delete'), @article, method: :delete  if admin?%>
+
+
+<%= link_to I18n.t('edit'), edit_article_path(@article.id), class: 'btn btn-primary' if moderator? || admin? %>
+<%= button_to I18n.t('delete'), article_path(@article.id), method: :delete, class: 'btn btn-danger' if admin? %>
+<%= link_to I18n.t('back'), subcategory_path(@article.subcategory.id), class: 'btn btn-secondary'%>
 </div>
+
+
+
+
+
+
+<div class="col-md-4">

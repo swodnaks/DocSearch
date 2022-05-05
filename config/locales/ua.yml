@@ -1,5 +1,6 @@
 ua:
   categories: Категорія
+  subcategory: Підкатегорія
   new_category: Нова категорія
   new_subcategory: Нова підкатегорія
   new_article: Новий пост
@@ -18,6 +19,15 @@ ua:
   back: Повернутися
   sign_up: Зареєструватись
   sign_in: Увійти
+  all_categories: Категорії
+  all_articles: Пости
+  all_subcategories: Підкатегорії
+  title: Заголовок
+  body: Контент
+  results: Результати
+  find_subcategories: Знайти підкатегорію
+  find_article: Знайти пост
+
   menu:
     home: "На головну"
     new_category: "Створити нову категорію"
@@ -33,7 +43,7 @@ ua:
         text: Контент
       article:
         title: Заголовок
-        body: Контент  
+        body: Контент
 
   devise:
     confirmations:

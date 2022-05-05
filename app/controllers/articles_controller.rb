@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     authorize Article
+    @subcategories = Subcategory.all
     @articles = Article.all
   end
 
@@ -59,6 +60,16 @@ class ArticlesController < ApplicationController
       format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+
+  def search
+    @query = ArticleIndex.search(params[:query].to_s).page(params[:page]).per(50)
+
+    @query = @query.page(params[:page]).per(50)
+
+    @results = @query.records
+    @total_results = @query.total_entries
   end
 
   private

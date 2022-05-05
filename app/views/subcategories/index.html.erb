@@ -6,6 +6,15 @@
 
     <div class="row">
 
+        <h6><%= I18n.t('find_subcategories') %>:</h6>
+        <form action="/search" method="get">
+          <%= hidden_field_tag "locale", params[:locale]%>
+          <div class="input-group input-inline search">
+            <input class="form-input" type="text" name="query" placeholder=<%=I18n.t('search')%>>
+             <button class="btn btn-primary input-group-btn "><%=I18n.t('search')%></button>
+               </div>
+              </form>
+
 
      <% @subcategories.each do |subcategory| %>
         <div class="col-md-6">
@@ -13,7 +22,7 @@
                 <div class="card-body">
                   <h3><%= link_to subcategory.title, subcategory_path(subcategory.id) %></h3>
 
-                    <%= link_to "View", subcategory_path(subcategory.id), class: 'btn btn-primary'%>
+                    <%= link_to I18n.t('view'), subcategory_path(subcategory.id), class: 'btn btn-primary'%>
                 </div>
             </div>
          </div>
@@ -26,7 +35,7 @@
     <div class="col-md-4">
       <div class="card mt-3">
         <div class="card-header">
-            Categories
+            <%= I18n.t('all_categories') %>
           </div>
             <div class="card-body">
               <ul class="list-group">
